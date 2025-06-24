@@ -1,0 +1,8 @@
+Tutaj zapisuję wszystkie potrzebne rzeczy do zrobienia.
+
+1.  Warto sprawdzić działanie INSERT komendy. Żyby ona działała mam stworzyć metodę
+   GetFreeID() - będzie ona zwracała wolne dostępne ID.
+
+2.  Także chcę zrobić graficzny interfejs. Żeby to było łatwe w dokonaniu trzeba
+   chronić funkcjonalności od podziału między klasami.
+
