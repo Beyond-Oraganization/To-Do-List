@@ -10,4 +10,4 @@ In the future we're planning to:
 - Secure connection with the databse
 - Add graphical interface
 - Add simple account system
-- Add statistics for your tasks that was completed and not
+- Add statistics for your tasks that was completed or not
