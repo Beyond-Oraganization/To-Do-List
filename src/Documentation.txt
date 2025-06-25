@@ -1,8 +1,14 @@
 Tutaj zapisuję wszystkie potrzebne rzeczy do zrobienia.
 
 1.  Warto sprawdzić działanie INSERT komendy. Żyby ona działała mam stworzyć metodę
-   GetFreeID() - będzie ona zwracała wolne dostępne ID.
+   GetFreeID() - będzie ona zwracała wolne dostępne ID. +
 
 2.  Także chcę zrobić graficzny interfejs. Żeby to było łatwe w dokonaniu trzeba
    chronić funkcjonalności od podziału między klasami.
+   Color pallet:
+   606c38
+   283618
+   fefae0
+   dda15e
+   bc6c25
 

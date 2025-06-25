@@ -1,14 +1,12 @@
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.io.File;
-import java.net.URL;
+import GUI.Menu;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        ProjectGUI projectGUI = new ProjectGUI();
+        Menu projectGUI = new Menu();
 
         Scanner scanner = new Scanner(System.in);
 

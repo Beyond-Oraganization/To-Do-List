@@ -7,7 +7,7 @@ public class DatabaseController {
     String password = "ToDoList_31012007";
 
     public void AddTask(String name, String text, LocalDate date, TaskImportance importance) {
-        try {
+        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password)) {
             //Add task to the database
 
             String command = "INSERT INTO TASKS " +
@@ -19,7 +19,6 @@ public class DatabaseController {
                     "" + importance.GetCode() + ", " +
                     "0)";
 
-            Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
             Statement stmt = conn.createStatement();
 
             stmt.executeQuery(command);
@@ -35,9 +34,8 @@ public class DatabaseController {
         int lastID = 0;
 
         //Gets last ID from database and adds to it 1
-        try {
+        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password)) {
             String command = "SELECT MAX(ID) FROM TASKS";
-            Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(command);
@@ -57,9 +55,8 @@ public class DatabaseController {
     }
 
     public void CompleteTask(String name) {
-        try {
+        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password)) {
             String command = "UPDATE TASKS SET isCompleted = 1 WHERE (NAME = '" + name + "' AND ISCOMPLETED = 0)";
-            Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(command);
 
@@ -74,11 +71,10 @@ public class DatabaseController {
     }
 
     public void DeleteTask(String name) {
-        try {
+        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password)) {
             //Deletes task from the database
             String command = "DELETE FROM TASKS WHERE NAME = '" + name + "'";
 
-            Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
             Statement stmt = conn.createStatement();
 
             ResultSet rs = stmt.executeQuery(command);
@@ -94,10 +90,8 @@ public class DatabaseController {
     }
 
     public void ShowScheduledTasks() {
-        try {
+        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password)) {
             //Show scheduled tasks from database
-
-            Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM TASKS");
